@@ -110,12 +110,12 @@
 	    });
 	    socket.on('serverfour', function (data) {
 	    fureone = dom.byId('fourone');
-	    fourone.innerHTML = + data.fname;
+	    fourone.innerHTML = data.fname;
 	    fourtwo = dom.byId('fourtwo');
-	    fourtwo.innerHTML = + data.destination;
+	    fourtwo.innerHTML = data.destination;
 	    fourthree = dom.byId('fourthree');
 	    thisDate = new Date (data.time);
-	    fourthree.innerHTML =  + data.status;
+	    fourthree.innerHTML =  data.status;
 	    fourfour = dom.byId('fourfour');
 	    fourfour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });

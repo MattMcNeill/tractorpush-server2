@@ -112,7 +112,7 @@
 	    fureone = dom.byId('fourone');
 	    fourone.innerHTML = + data.fname;
 	    fourtwo = dom.byId('fourtwo');
-	    fourtwo.innerHTML = + data.ordinal;
+	    fourtwo.innerHTML = + data.destination;
 	    fourthree = dom.byId('fourthree');
 	    thisDate = new Date (data.time);
 	    fourthree.innerHTML =  + data.status;
