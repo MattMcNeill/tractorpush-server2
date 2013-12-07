@@ -60,7 +60,7 @@
 
 
 	  </style>
-	  <title>ACCDN TRANSCODE</title>
+	  <title>Tractor Push: MongoDB Tailable Cursor + Socket.IO demo</title>
 	<script src='/socket.io/socket.io.js'></script> 
         <script src="//ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js"
             data-dojo-config='async: true'>
@@ -97,40 +97,16 @@
 	    twofour = dom.byId('twofour');
 	    twofour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
-	    socket.on('serverthree', function (data) {
-	    threeone = dom.byId('threeone');
-	    threeone.innerHTML = 'Message type: ' + data.messagetype;
-	    threetwo = dom.byId('threetwo');
-	    threetwo.innerHTML = 'Sequence number: ' + data.ordinal;
-	    threethree = dom.byId('threethree');
-	    thisDate = new Date (data.time);
-	    threethree.innerHTML = 'Timestamp: ' + dateFormat(thisDate, 'MMMM d yyyy, h:mm:ss a z');
-	    threefour = dom.byId('threefour');
-	    threefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
-	    });
-	    socket.on('serverfour', function (data) {
-	    fureone = dom.byId('fourone');
-	    fourone.innerHTML = 'Message type: ' + data.messagetype;
-	    fourtwo = dom.byId('fourtwo');
-	    fourtwo.innerHTML = 'Sequence number: ' + data.ordinal;
-	    fourthree = dom.byId('fourthree');
-	    thisDate = new Date (data.time);
-	    fourthree.innerHTML = 'Timestamp: ' + dateFormat(thisDate, 'MMMM d yyyy, h:mm:ss a z');
-	    fourfour = dom.byId('fourfour');
-	    fourfour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
-	    });
 	    });
         </script>
     </head>
     <body>
-      <!-- Background
-
+      <!-- Background -->
       <div class="backimg">
          <img class="fillscreen" alt='Tractor Engine, Copyright 2011 Ben Wen CC
-          BY-SA 3.0' src=""/> 
+          BY-SA 3.0' src="http://blog.mongolab.com/wp-content/uploads/2012/03/tractor_engine_1600_Web.jpg"/> 
       </div>
-	-->
-	<!-- 
+
       <div class="titlebox">
 	<h1>Tractor Push</h1>
 	<h2> 
@@ -138,14 +114,13 @@
 	Tailable <br/> 
 	Cursor and <br/> 
 	Socket.IO Demo <br/>
-	from ACCDN 
+	from MongoLab 
       </h2>
       </div>
-	-->
       <div class='container'>
 	<div class='content' style='top: 0; left: 0'>
 	  <div class='innercontent'>
-       <h3>SERVER ONE </h3>
+       <h3>All messages </h3>
       <ul>
 	    <li id='oneone'>--</li>
 	    <li id='onetwo'>--</li>
@@ -156,7 +131,7 @@
 	</div>
 	<div class='content' style='top: 0; left: 400px'>
 	  <div class='innercontent'>
-      <h3>SERVER TWO</h3>
+      <h3>Complex only</h3>
       <ul>
 	    <li id='twoone'>--</li>
 	    <li id='twotwo'>--</li>
@@ -167,33 +142,6 @@
 	</div>
       </div>
 
-	<div class='content' style='top: 0; left: 800px'>
-	  <div class='innercontent'>
-      <h3>SERVER THREE</h3>
-      <ul>
-	    <li id='threeone'>--</li>
-	    <li id='threetwo'>--</li>
-	    <li id='threethree'>--</li>
-	    <li id='threefour'>--</li>
-	  </ul>
-	  </div>
-	</div>
-      </div>
-
-	<div class='content' style='top: 0; left: 1200px'>
-	  <div class='innercontent'>
-      <h3>SERVER FOUR</h3>
-      <ul>
-	    <li id='fourone'>--</li>
-	    <li id='fourtwo'>--</li>
-	    <li id='fourthree'>--</li>
-	    <li id='fourfour'>--</li>
-	  </ul>
-	  </div>
-	</div>
-      </div>
-
-	<!--
       <div class='descript'>
       This demonstration of a Socket.IO client accepts two message streams from a server asynchronously.  The left box is updated on the arrival of the 'all messages' stream.  Messages can be one of three types: simple, array, or complex.  The right box is updated from a message stream of only the 'complex' type.  The streams are independent but draw from the same source.
 	
@@ -239,6 +187,5 @@
 
 
 </div>
--->
     </body>
 </html>
