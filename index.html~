@@ -75,7 +75,7 @@
 	    function strip_id(key, value)  { return key == '_id' ? undefined : value; }
 
 	    var socket = io.connect('/');
-	    socket.on('serverone', function (data) {
+	    socket.on('all', function (data) {
 	    oneone = dom.byId('oneone');
 	    oneone.innerHTML = 'Message type: ' + data.messagetype;
 	    onetwo = dom.byId('onetwo');
@@ -86,7 +86,7 @@
 	    onefour = dom.byId('onefour');
 	    onefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
-	    socket.on('servertwo', function (data) {
+	    socket.on('complex', function (data) {
 	    twoone = dom.byId('twoone');
 	    twoone.innerHTML = 'Message type: ' + data.messagetype;
 	    twotwo = dom.byId('twotwo');
@@ -166,7 +166,6 @@
 	  </div>
 	</div>
       </div>
-
 	<div class='content' style='top: 0; left: 800px'>
 	  <div class='innercontent'>
       <h3>SERVER THREE</h3>
@@ -179,7 +178,6 @@
 	  </div>
 	</div>
       </div>
-
 	<div class='content' style='top: 0; left: 1200px'>
 	  <div class='innercontent'>
       <h3>SERVER FOUR</h3>
@@ -192,7 +190,6 @@
 	  </div>
 	</div>
       </div>
-
 	<!--
       <div class='descript'>
       This demonstration of a Socket.IO client accepts two message streams from a server asynchronously.  The left box is updated on the arrival of the 'all messages' stream.  Messages can be one of three types: simple, array, or complex.  The right box is updated from a message stream of only the 'complex' type.  The streams are independent but draw from the same source.
