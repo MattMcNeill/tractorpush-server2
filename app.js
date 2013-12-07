@@ -146,20 +146,27 @@ function startIOServer (collection) {
 // (known bug: if there are no documents in the collection, it doesn't work.)
 //
 function readAndSend (socket, collection) {
-    collection.find({}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
-	cursor.intervalEach(300, function(err, item) { // intervalEach() is a duck-punched version of each() that waits N milliseconds between each iteration.
-	    if(item != null) {
-		socket.emit("all", item); // sends to clients subscribed to type "all"
-	    }
-	});
-    });
-    collection.find({"messagetype":"complex"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
+//    collection.find({}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
+//	cursor.intervalEach(300, function(err, item) { // intervalEach() is a duck-punched version of each() that waits N milliseconds     between each iteration.
+//	    if(item != null) {
+//		socket.emit("all", item); // sends to clients subscribed to type "all"
+//	    }
+//	});
+//    });
+    collection.find({"messagetype":"serverone"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
 	cursor.intervalEach(900, function(err, item) {
 	    if(item != null) {
-		socket.emit("complex", item); // sends to clients subscribe to type "complex"
+		socket.emit("serverone", item); // sends to clients subscribe to type "complex"
 	    }
 	});
     });
+    collection.find({"messagetype":"servertwo"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
+	cursor.intervalEach(900, function(err, item) {
+	    if(item != null) {
+		socket.emit("servertwo", item); // sends to clients subscribe to type "complex"
+	    }
+	});
+  });
     collection.find({"messagetype":"serverthree"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
 	cursor.intervalEach(900, function(err, item) {
 	    if(item != null) {
