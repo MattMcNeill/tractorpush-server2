@@ -75,7 +75,7 @@
 	    function strip_id(key, value)  { return key == '_id' ? undefined : value; }
 
 	    var socket = io.connect('/');
-	    socket.on('all', function (data) {
+	    socket.on('serverone', function (data) {
 	    oneone = dom.byId('oneone');
 	    oneone.innerHTML = 'Message type: ' + data.messagetype;
 	    onetwo = dom.byId('onetwo');
@@ -86,7 +86,7 @@
 	    onefour = dom.byId('onefour');
 	    onefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
-	    socket.on('complex', function (data) {
+	    socket.on('servertwo', function (data) {
 	    twoone = dom.byId('twoone');
 	    twoone.innerHTML = 'Message type: ' + data.messagetype;
 	    twotwo = dom.byId('twotwo');

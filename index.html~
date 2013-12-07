@@ -193,7 +193,7 @@
 	</div>
       </div>
 
-
+	<!--
       <div class='descript'>
       This demonstration of a Socket.IO client accepts two message streams from a server asynchronously.  The left box is updated on the arrival of the 'all messages' stream.  Messages can be one of three types: simple, array, or complex.  The right box is updated from a message stream of only the 'complex' type.  The streams are independent but draw from the same source.
 	
@@ -239,5 +239,6 @@
 
 
 </div>
+-->
     </body>
 </html>
