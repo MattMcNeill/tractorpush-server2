@@ -160,13 +160,6 @@ function readAndSend (socket, collection) {
 	    }
 	});
     });
-    collection.find({"messagetype":"serverthree"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
-	cursor.intervalEach(900, function(err, item) {
-	    if(item != null) {
-		socket.emit("serverthree", item); // sends to clients subscribe to type "serverthree"
-	    }
-	});
-    });
 };
 	
 
