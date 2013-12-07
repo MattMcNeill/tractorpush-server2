@@ -75,9 +75,9 @@
 	    function strip_id(key, value)  { return key == '_id' ? undefined : value; }
 
 	    var socket = io.connect('/');
-	    socket.on('sereverone', function (data) {
+	    socket.on('serverone', function (data) {
 	    oneone = dom.byId('oneone');
-	    oneone.innerHTML = data.fname;
+	    oneone.innerHTML = 'File: ' + data.fname;
 	    onetwo = dom.byId('onetwo');
 	    onetwo.innerHTML = 'Destination: ' + data.destination;
 	    onethree = dom.byId('onethree');
@@ -88,7 +88,7 @@
 	    });
 	    socket.on('servertwo', function (data) {
 	    twoone = dom.byId('twoone');
-	    twoone.innerHTML = data.fname;
+	    twoone.innerHTML = 'File: ' + data.fname;
 	    twotwo = dom.byId('twotwo');
 	    twotwo.innerHTML = 'destination: ' + data.destination;
 	    twothree = dom.byId('twothree');
@@ -99,7 +99,7 @@
 	    });
 	    socket.on('serverthree', function (data) {
 	    threeone = dom.byId('threeone');
-	    threeone.innerHTML = data.fname;
+	    threeone.innerHTML = 'File: ' + data.fname;
 	    threetwo = dom.byId('threetwo');
 	    threetwo.innerHTML = 'destination: ' + data.destination;
 	    threethree = dom.byId('threethree');
@@ -110,7 +110,7 @@
 	    });
 	    socket.on('serverfour', function (data) {
 	    fureone = dom.byId('fourone');
-	    fourone.innerHTML = data.fname;
+	    fourone.innerHTML = 'File: ' + data.fname;
 	    fourtwo = dom.byId('fourtwo');
 	    fourtwo.innerHTML = 'Destination: ' + data.destination;
 	    fourthree = dom.byId('fourthree');

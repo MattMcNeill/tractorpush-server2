@@ -75,7 +75,7 @@
 	    function strip_id(key, value)  { return key == '_id' ? undefined : value; }
 
 	    var socket = io.connect('/');
-	    socket.on('sereverone', function (data) {
+	    socket.on('serverone', function (data) {
 	    oneone = dom.byId('oneone');
 	    oneone.innerHTML = 'File: ' + data.fname;
 	    onetwo = dom.byId('onetwo');
