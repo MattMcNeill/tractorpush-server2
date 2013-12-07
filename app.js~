@@ -167,6 +167,13 @@ function readAndSend (socket, collection) {
 	    }
 	});
     });
+    collection.find({"messagetype":"serverfour"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
+	cursor.intervalEach(900, function(err, item) {
+	    if(item != null) {
+		socket.emit("serverfour", item); // sends to clients subscribe to type "serverfour"
+	    }
+	});
+    });
 };
 	
 

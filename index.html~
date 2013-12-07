@@ -99,7 +99,7 @@
 	    });
 	    socket.on('serverthree', function (data) {
 	    threeone = dom.byId('threeone');
-	    threeone.innerHTML = 'Message type: ' + data.messagetype;
+	    //threeone.innerHTML = 'Message type: ' + data.messagetype;
 	    threetwo = dom.byId('threetwo');
 	    threetwo.innerHTML = 'Sequence number: ' + data.ordinal;
 	    threethree = dom.byId('threethree');
@@ -110,12 +110,12 @@
 	    });
 	    socket.on('serverfour', function (data) {
 	    fureone = dom.byId('fourone');
-	    fourone.innerHTML = 'Message type: ' + data.messagetype;
+	    fourone.innerHTML = + data.fname;
 	    fourtwo = dom.byId('fourtwo');
-	    fourtwo.innerHTML = 'Sequence number: ' + data.ordinal;
+	    fourtwo.innerHTML = + data.ordinal;
 	    fourthree = dom.byId('fourthree');
 	    thisDate = new Date (data.time);
-	    fourthree.innerHTML = 'Timestamp: ' + dateFormat(thisDate, 'MMMM d yyyy, h:mm:ss a z');
+	    fourthree.innerHTML =  + data.status;
 	    fourfour = dom.byId('fourfour');
 	    fourfour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
