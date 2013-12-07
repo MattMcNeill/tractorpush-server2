@@ -75,36 +75,36 @@
 	    function strip_id(key, value)  { return key == '_id' ? undefined : value; }
 
 	    var socket = io.connect('/');
-	    socket.on('all', function (data) {
+	    socket.on('sereverone', function (data) {
 	    oneone = dom.byId('oneone');
-	    oneone.innerHTML = 'Message type: ' + data.messagetype;
+	    oneone.innerHTML = data.fname;
 	    onetwo = dom.byId('onetwo');
-	    onetwo.innerHTML = 'Sequence number: ' + data.ordinal;
+	    onetwo.innerHTML = 'Destination: ' + data.destination;
 	    onethree = dom.byId('onethree');
 	    thisDate = new Date (data.time);
-	    onethree.innerHTML = 'Timestamp: ' + dateFormat(thisDate, 'MMMM d yyyy, h:mm:ss a z');
+	    onethree.innerHTML = 'Status: ' + data.status;
 	    onefour = dom.byId('onefour');
 	    onefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
-	    socket.on('complex', function (data) {
+	    socket.on('servertwo', function (data) {
 	    twoone = dom.byId('twoone');
-	    twoone.innerHTML = 'Message type: ' + data.messagetype;
+	    twoone.innerHTML = data.fname;
 	    twotwo = dom.byId('twotwo');
-	    twotwo.innerHTML = 'Sequence number: ' + data.ordinal;
+	    twotwo.innerHTML = 'destination: ' + data.destination;
 	    twothree = dom.byId('twothree');
 	    thisDate = new Date (data.time);
-	    twothree.innerHTML = 'Timestamp: ' + dateFormat(thisDate, 'MMMM d yyyy, h:mm:ss a z');
+	    twothree.innerHTML = innerHTML = 'Status: ' + data.status;
 	    twofour = dom.byId('twofour');
 	    twofour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
 	    socket.on('serverthree', function (data) {
 	    threeone = dom.byId('threeone');
-	    //threeone.innerHTML = 'Message type: ' + data.messagetype;
+	    threeone.innerHTML = data.fname;
 	    threetwo = dom.byId('threetwo');
-	    threetwo.innerHTML = 'Sequence number: ' + data.ordinal;
+	    threetwo.innerHTML = 'destination: ' + data.destination;
 	    threethree = dom.byId('threethree');
 	    thisDate = new Date (data.time);
-	    threethree.innerHTML = 'Timestamp: ' + dateFormat(thisDate, 'MMMM d yyyy, h:mm:ss a z');
+	    threethree.innerHTML = innerHTML = 'Status: ' + data.status;
 	    threefour = dom.byId('threefour');
 	    threefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
@@ -112,10 +112,10 @@
 	    fureone = dom.byId('fourone');
 	    fourone.innerHTML = data.fname;
 	    fourtwo = dom.byId('fourtwo');
-	    fourtwo.innerHTML = 'Sequence number: ' + data.ordinal;
+	    fourtwo.innerHTML = 'Destination: ' + data.destination;
 	    fourthree = dom.byId('fourthree');
 	    thisDate = new Date (data.time);
-	    fourthree.innerHTML =  data.status;
+	    fourthree.innerHTML =  innerHTML = 'Status: ' + data.status;
 	    fourfour = dom.byId('fourfour');
 	    fourfour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
