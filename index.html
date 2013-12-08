@@ -83,8 +83,8 @@
 	    onethree = dom.byId('onethree');
 	    thisDate = new Date (data.time);
 	    onethree.innerHTML = 'Status: ' + data.status;
-	    onefour = dom.byId('onefour');
-	    onefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
+	    //onefour = dom.byId('onefour');
+	    //onefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
 	    socket.on('servertwo', function (data) {
 	    twoone = dom.byId('twoone');
@@ -94,8 +94,8 @@
 	    twothree = dom.byId('twothree');
 	    thisDate = new Date (data.time);
 	    twothree.innerHTML = innerHTML = 'Status: ' + data.status;
-	    twofour = dom.byId('twofour');
-	    twofour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
+	    //twofour = dom.byId('twofour');
+	    //twofour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
 	    socket.on('serverthree', function (data) {
 	    threeone = dom.byId('threeone');
@@ -105,8 +105,8 @@
 	    threethree = dom.byId('threethree');
 	    thisDate = new Date (data.time);
 	    threethree.innerHTML = innerHTML = 'Status: ' + data.status;
-	    threefour = dom.byId('threefour');
-	    threefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
+	    //threefour = dom.byId('threefour');
+	    //threefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
 	    socket.on('serverfour', function (data) {
 	    fureone = dom.byId('fourone');
@@ -116,8 +116,8 @@
 	    fourthree = dom.byId('fourthree');
 	    thisDate = new Date (data.time);
 	    fourthree.innerHTML =  innerHTML = 'Status: ' + data.status;
-	    fourfour = dom.byId('fourfour');
-	    fourfour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
+	    //fourfour = dom.byId('fourfour');
+	    //fourfour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
 	    });
 	    });
         </script>
