@@ -60,6 +60,8 @@
 // really it's a TODO.
 //
 
+require('newrelic');
+
 var fs = require("fs"), 
 url = require("url"),
 emitter = require("events").EventEmitter,
