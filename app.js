@@ -60,7 +60,8 @@
 // really it's a TODO.
 //
 
-require('newrelic'),
+
+require('newrelic');
 
 var fs = require("fs"), 
 url = require("url"),
