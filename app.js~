@@ -154,28 +154,28 @@ function readAndSend (socket, collection) {
 //	});
 //    });
     collection.find({"messagetype":"serverone"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
-	cursor.intervalEach(900, function(err, item) {
+	cursor.intervalEach(300, function(err, item) {
 	    if(item != null) {
 		socket.emit("serverone", item); // sends to clients subscribe to type "complex"
 	    }
 	});
     });
     collection.find({"messagetype":"servertwo"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
-	cursor.intervalEach(900, function(err, item) {
+	cursor.intervalEach(300, function(err, item) {
 	    if(item != null) {
 		socket.emit("servertwo", item); // sends to clients subscribe to type "complex"
 	    }
 	});
   });
     collection.find({"messagetype":"serverthree"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
-	cursor.intervalEach(900, function(err, item) {
+	cursor.intervalEach(300, function(err, item) {
 	    if(item != null) {
 		socket.emit("serverthree", item); // sends to clients subscribe to type "serverthree"
 	    }
 	});
     });
     collection.find({"messagetype":"serverfour"}, {"tailable": 1, "sort": [["$natural", 1]]}, function(err, cursor) {
-	cursor.intervalEach(900, function(err, item) {
+	cursor.intervalEach(300, function(err, item) {
 	    if(item != null) {
 		socket.emit("serverfour", item); // sends to clients subscribe to type "serverfour"
 	    }
