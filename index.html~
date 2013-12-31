@@ -83,30 +83,30 @@
 	    onethree = dom.byId('onethree');
 	    thisDate = new Date (data.time);
 	    onethree.innerHTML = 'Status: ' + data.status;
-	    //onefour = dom.byId('onefour');
-	    //onefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
+	    onefour = dom.byId('onefour');
+	    onefour.innerHTML = 'ETA' + JSON.ETA; 
 	    });
 	    socket.on('servertwo', function (data) {
 	    twoone = dom.byId('twoone');
 	    twoone.innerHTML = 'File: ' + data.fname;
 	    twotwo = dom.byId('twotwo');
-	    twotwo.innerHTML = 'destination: ' + data.destination;
+	    twotwo.innerHTML = 'Destination: ' + data.destination;
 	    twothree = dom.byId('twothree');
 	    thisDate = new Date (data.time);
 	    twothree.innerHTML = innerHTML = 'Status: ' + data.status;
-	    //twofour = dom.byId('twofour');
-	    //twofour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
+	    twofour = dom.byId('twofour');
+	    twofour.innerHTML = 'ETA' + data.ETA; 
 	    });
 	    socket.on('serverthree', function (data) {
 	    threeone = dom.byId('threeone');
 	    threeone.innerHTML = 'File: ' + data.fname;
 	    threetwo = dom.byId('threetwo');
-	    threetwo.innerHTML = 'destination: ' + data.destination;
+	    threetwo.innerHTML = 'Destination: ' + data.destination;
 	    threethree = dom.byId('threethree');
 	    thisDate = new Date (data.time);
 	    threethree.innerHTML = innerHTML = 'Status: ' + data.status;
-	    //threefour = dom.byId('threefour');
-	    //threefour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
+	    threefour = dom.byId('threefour');
+	    threefour.innerHTML = 'ETA' + data.ETA; 
 	    });
 	    socket.on('serverfour', function (data) {
 	    fureone = dom.byId('fourone');
@@ -116,8 +116,8 @@
 	    fourthree = dom.byId('fourthree');
 	    thisDate = new Date (data.time);
 	    fourthree.innerHTML =  innerHTML = 'Status: ' + data.status;
-	    //fourfour = dom.byId('fourfour');
-	    //fourfour.innerHTML = '<pre> Entire message: ' + JSON.stringify(data, strip_id, 2) + '</pre>'; 
+	    fourfour = dom.byId('fourfour');
+	    fourfour.innerHTML = 'ETA' + data.ETA; 
 	    });
 	    });
         </script>
@@ -145,7 +145,7 @@
       <div class='container'>
 	<div class='content' style='top: 0; left: 0'>
 	  <div class='innercontent'>
-       <h3>SERVER ONE </h3>
+       <h3>SERVER ONE</h3>
       <ul>
 	    <li id='oneone'>--</li>
 	    <li id='onetwo'>--</li>
@@ -165,8 +165,7 @@
 	  </ul>
 	  </div>
 	</div>
-      </div>
-	<div class='content' style='top: 0; left: 500px'>
+      	<div class='content' style='top: 0; left: 500px'>
 	  <div class='innercontent'>
       <h3>SERVER THREE</h3>
       <ul>
@@ -177,8 +176,7 @@
 	  </ul>
 	  </div>
 	</div>
-      </div>
-	<div class='content' style='top: 0; left: 750px'>
+      	<div class='content' style='top: 0; left: 750px'>
 	  <div class='innercontent'>
       <h3>SERVER FOUR</h3>
       <ul>

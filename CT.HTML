@@ -1,0 +1,77 @@
+
+
+<html>
+
+<head>
+
+	<script type="text/javascript">
+
+		var mins = 10;
+
+		var secs = 0;
+
+		var timer;
+
+		
+
+		function start(){
+
+			timer = setInterval('update()', 1000);
+
+		}
+
+		
+
+		function update(){
+
+			var timeField = document.getElementById('time');
+
+			if(secs == 0){
+
+				if(mins == 0){
+
+					timeField.innerHTML = 'Time's up!';
+
+					clearInterval(timer);
+
+                                        alert('Time's up');
+
+					return;
+
+				}
+
+				mins--;
+
+				secs = 59;
+
+			} else {
+
+				secs--;
+
+			}
+
+			if(secs<10){
+
+				timeField.innerHTML = 'Time left: ' + mins + ':0' + secs;
+
+			} else {
+
+				timeField.innerHTML = 'Time left: ' + mins + ':' + secs;
+
+			}	
+
+		}
+
+	</script>
+
+</head>
+
+<body onload="start();">
+
+	<div id="time" >
+
+	</div>
+
+</body>
+
+</html>

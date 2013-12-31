@@ -61,7 +61,7 @@
 //
 
 
-require('newrelic');
+//require('newrelic');
 
 var fs = require("fs"), 
 url = require("url"),
@@ -106,7 +106,7 @@ function handler (req, res) {
 //
 mongo.Db.connect (uristring, function (err, db) { 
     console.log ("Attempting connection to " + mongoUrl.protocol + "//" + mongoUrl.hostname + " (complete URL supressed).");
-    db.collection ("messages", function (err, collection) {
+    db.collection ("messages3", function (err, collection) {
 	collection.isCapped(function (err, capped) { 
 	    if (err) {
 		console.log ("Error when detecting capped collection.  Aborting.  Capped collections are necessary for tailed cursors.");
